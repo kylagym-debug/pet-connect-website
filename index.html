@@ -11,7 +11,20 @@
 </head>
 
 <body>
+    
+<div class="top-bar">
 
+    <div class="logo">Pet Connect</div>
+
+    <div class="top-nav">
+        <span onclick="goHome()">HOME</span>
+        <span>ABOUT</span>
+        <span>SERVICES</span>
+        <span onclick="showPage('search-page')">SEARCH</span>
+    </div>
+
+</div>
+    
 <!-- NAV -->
 <nav class="top-nav">
     <span onclick="goHome()">Home</span>
@@ -24,10 +37,16 @@
     <h1>🐾 PetConnect</h1>
     <p class="subtitle">Find pets. Find homes. Reunite families.</p>
 
-    <div class="home-options">
-        <div class="card-option" onclick="showPage('adoption-menu')">ADOPT</div>
-        <div class="card-option" onclick="showPage('lost-menu')">LOST PET</div>
+<div class="home-options">
+
+    <div class="card-option" data-title="ADOPT" onclick="showPage('adoption-menu')">
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e">
     </div>
+
+    <div class="card-option" data-title="LOST PET" onclick="showPage('lost-menu')">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b">
+    </div>
+
 </div>
 
 <!-- ADOPTION MENU -->
