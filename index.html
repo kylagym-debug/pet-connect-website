@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PetConnect</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css3">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+    <span onclick="goHome()">Home</span>
+    <span onclick="showPage('search-page')">Search</span>
+    <span>Services</span>
+</nav>
+
+<!-- HOME -->
+<div id="home-page" class="page">
+    <h1>🐾 PetConnect</h1>
+    <p class="subtitle">Find pets. Find homes. Reunite families.</p>
+
+    <div class="home-options">
+        <div class="card-option" onclick="showPage('adoption-menu')">ADOPT</div>
+        <div class="card-option" onclick="showPage('lost-menu')">LOST PET</div>
+    </div>
+</div>
+
+<!-- ADOPTION MENU -->
+<div id="adoption-menu" class="page">
+    <h2>Adoptions</h2>
+
+    <div class="home-options">
+        <div class="card-option" onclick="showPage('create-animal')">Add Animal</div>
+        <div class="card-option" onclick="showPage('create-owner')">Owner Profile</div>
+    </div>
+</div>
+
+<!-- LOST MENU -->
+<div id="lost-menu" class="page">
+    <h2>Lost Pets</h2>
+
+    <div class="home-options">
+        <div class="card-option" onclick="showPage('create-missing')">Missing Pet</div>
+        <div class="card-option" onclick="showPage('create-found')">Found Pet</div>
+    </div>
+</div>
+
+<!-- CREATE ANIMAL -->
+<div id="create-animal" class="page">
+    <h2>Add Animal</h2>
+
+    <form onsubmit="submitAdoptionAnimalProfile(event)">
+        <input type="text" id="animal-name" placeholder="Animal Name" required>
+
+        <select id="animal-type">
+            <option>Dog</option>
+            <option>Cat</option>
+        </select>
+
+        <div id="animal-characteristics">
+            <label><input type="checkbox" value="Friendly"> Friendly</label>
+            <label><input type="checkbox" value="Energetic"> Energetic</label>
+            <label><input type="checkbox" value="Calm"> Calm</label>
+            <label><input type="checkbox" value="Playful"> Playful</label>
+        </div>
+
+        <button type="submit">Create Profile</button>
+    </form>
+</div>
+
+<!-- CREATE OWNER -->
+<div id="create-owner" class="page">
+    <h2>Owner Profile</h2>
+
+    <form onsubmit="submitOwnerProfile(event)">
+        <input type="text" id="owner-name" placeholder="Owner Name" required>
+
+        <div id="dream-characteristics">
+            <label><input type="checkbox" value="Friendly"> Friendly</label>
+            <label><input type="checkbox" value="Energetic"> Energetic</label>
+            <label><input type="checkbox" value="Calm"> Calm</label>
+            <label><input type="checkbox" value="Playful"> Playful</label>
+        </div>
+
+        <button type="submit">Create Profile</button>
+    </form>
+</div>
+
+<!-- CREATE MISSING -->
+<div id="create-missing" class="page">
+    <h2>Missing Pet</h2>
+
+    <form onsubmit="submitMissingDogProfile(event)">
+        <input type="text" id="missing-dog-name" placeholder="Dog Name" required>
+
+        <select id="missing-dog-color">
+            <option>Black</option>
+            <option>Brown</option>
+            <option>White</option>
+        </select>
+
+        <input type="file" id="missing-dog-picture" accept="image/*">
+
+        <select id="missing-dog-size">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+        </select>
+
+        <input type="text" id="missing-dog-breed" placeholder="Breed">
+
+        <input type="text" id="missing-dog-standout" placeholder="Features">
+
+        <button type="submit">Create Profile</button>
+    </form>
+</div>
+
+<!-- CREATE FOUND -->
+<div id="create-found" class="page">
+    <h2>Found Pet</h2>
+
+    <form onsubmit="submitFoundDogProfile(event)">
+        <select id="found-dog-color">
+            <option>Black</option>
+            <option>Brown</option>
+            <option>White</option>
+        </select>
+
+        <input type="file" id="found-dog-picture" accept="image/*">
+
+        <select id="found-dog-size">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+        </select>
+
+        <input type="text" id="found-dog-breed" placeholder="Breed">
+
+        <input type="text" id="found-dog-standout" placeholder="Features">
+
+        <button type="submit">Create Profile</button>
+    </form>
+</div>
+
+<!-- RESULTS -->
+<div id="results-page" class="page">
+    <h2>Matches</h2>
+    <div id="results-grid"></div>
+</div>
+
+<!-- SEARCH -->
+<div id="search-page" class="page">
+    <h2>Browse Pets</h2>
+    <div id="search-grid"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
