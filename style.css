@@ -1,0 +1,227 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, #ff6a88, #ff99ac);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PAGE BASE */
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 900px;
+    min-height: 80vh;
+
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* SHOW HOME FIRST */
+#home-page {
+    display: flex;
+}
+
+/* NAV BAR */
+.top-nav {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    display: flex;
+    gap: 20px;
+
+    font-weight: 500;
+    color: white;
+}
+
+.top-nav span {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.top-nav span:hover {
+    text-decoration: underline;
+}
+
+/* TITLES */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* OPTION CARDS (HOME + MENUS) */
+.home-options {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-option {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+
+    padding: 35px;
+    border-radius: 20px;
+
+    width: 220px;
+    text-align: center;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card-option:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* FORMS */
+form {
+    width: 100%;
+    max-width: 400px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* CHECKBOX GRID */
+#animal-characteristics,
+#dream-characteristics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+label {
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* BUTTON */
+button {
+    margin-top: 20px;
+    padding: 14px;
+    width: 100%;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+/* RESULTS GRID (LIKE TINDER / GOOGLE IMAGES) */
+#results-grid,
+#search-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* MATCH CARD */
+.match-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.match-card:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGE */
+.match-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CARD TEXT */
+.match-card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.match-card-content h3 {
+    margin-bottom: 5px;
+}
+
+.match-card-content p {
+    color: #777;
+}
+
+/* BACK BUTTON (if you add later) */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* SMOOTH TRANSITIONS */
+.page {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
