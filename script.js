@@ -22,10 +22,36 @@ function getImageURL(file) {
     return file ? URL.createObjectURL(file) : "https://via.placeholder.com/300";
 }
 
-/* SUBMITS */
-function submitAdoptionAnimalProfile(e){
-    e.preventDefault();
-    showPage("results-page");
+let allAnimals = [];
+
+function submitAdoptionAnimalProfile(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("animal-name").value;
+    const type = document.getElementById("animal-type").value;
+
+    allAnimals.push({ name, type });
+
+    alert("Animal profile created!");
+}
+
+function searchAnimals() {
+    const name = document.getElementById("search-name").value.toLowerCase();
+    const type = document.getElementById("search-type").value;
+
+    const results = allAnimals.filter(animal =>
+        (!name || animal.name.toLowerCase().includes(name)) &&
+        (!type || animal.type === type)
+    );
+
+    const container = document.getElementById("search-results");
+    container.innerHTML = "";
+
+    results.forEach(animal => {
+        const div = document.createElement("div");
+        div.innerHTML = `<strong>${animal.name}</strong> (${animal.type})`;
+        container.appendChild(div);
+    });
 }
 
 function submitOwnerProfile(e){
