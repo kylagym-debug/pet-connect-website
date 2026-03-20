@@ -76,10 +76,13 @@ body::after {
 
 /* TAGLINE */
 .subtitle {
-    border: 2px solid #888;
-    padding: 10px 20px;
-    margin: 80px 0 60px 0;
-    width: fit-content;
+    border: none;              /* remove box */
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 80px auto 60px auto;
+
+    font-family: 'Playfair Display', serif; /* elegant font */
+    letter-spacing: 1px;
 }
 
 /* MAIN OPTIONS ROW */
@@ -196,4 +199,24 @@ button {
 
 .match-card-content {
     margin-top: 10px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+
+    background: url("https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transform: translate(-50%, -50%);
+    opacity: 0.08;
+
+    pointer-events: none;
+    z-index: -1;
 }
